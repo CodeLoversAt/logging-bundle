@@ -41,7 +41,7 @@ class CodeLoversLoggingExtension extends Extension
             $container->getDefinition('code_lovers_logging.prowl.connector')
                 ->addMethodCall('setProviderKey', array($prowlConfig['provider_key']));
 
-            $container->getDefinition('code_lovers_logging.monlog.handler.prowl')
+            $container->getDefinition('code_lovers_logging.monolog.handler.prowl')
                 ->addArgument($prowlConfig['api_key'])
                 ->addArgument($prowlConfig['app_name']);
         }
@@ -49,7 +49,7 @@ class CodeLoversLoggingExtension extends Extension
         if (isset($config['jabber'])) {
             $jabberConfig = $config['jabber'];
 
-            $container->getDefinition('code_lovers_logging.monlog.handler.jabber')
+            $container->getDefinition('code_lovers_logging.monolog.handler.jabber')
                 ->addArgument($jabberConfig['host'])
                 ->addArgument($jabberConfig['port'])
                 ->addArgument($jabberConfig['user'])
