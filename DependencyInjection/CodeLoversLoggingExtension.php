@@ -49,7 +49,7 @@ class CodeLoversLoggingExtension extends Extension
         if (isset($config['jabber'])) {
             $jabberConfig = $config['jabber'];
 
-            $container->getDefinition('code_lovers_logging.monlog.jabber.prowl')
+            $container->getDefinition('code_lovers_logging.monlog.handler.jabber')
                 ->addArgument($jabberConfig['host'])
                 ->addArgument($jabberConfig['port'])
                 ->addArgument($jabberConfig['user'])

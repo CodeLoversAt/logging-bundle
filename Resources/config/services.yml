@@ -11,5 +11,5 @@ services:
         class: %code_lovers_logging.monlog.handler.prowl.class%
         arguments: [@code_lovers_logging.prowl.connector]
 
-    code_lovers_logging.monlog.jabber.prowl:
+    code_lovers_logging.monlog.handler.jabber:
         class: %code_lovers_logging.monlog.handler.jabber.class%

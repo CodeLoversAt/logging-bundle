@@ -26,6 +26,11 @@ class JabberHandler extends AbstractProcessingHandler
     private $recipient;
 
     /**
+     * @var bool
+     */
+    private $connected = false;
+
+    /**
      * @param string $host
      * @param string $port
      * @param string $user
@@ -41,7 +46,7 @@ class JabberHandler extends AbstractProcessingHandler
 
     public function __destruct()
     {
-        if (false === $this->xmpp->isDisconnected()) {
+        if (true === $this->connected) {
             $this->xmpp->disconnect();
         }
     }
@@ -55,9 +60,9 @@ class JabberHandler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
-        if ($this->xmpp->isDisconnected()) {
+        if (false === $this->connected) {
             $this->xmpp->connect();
-            $this->xmpp->processUntil('session_start');
+            $this->connected = true;
         }
 
         if (null === $this->recipient) {
