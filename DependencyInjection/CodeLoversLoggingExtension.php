@@ -45,5 +45,18 @@ class CodeLoversLoggingExtension extends Extension
                 ->addArgument($prowlConfig['api_key'])
                 ->addArgument($prowlConfig['app_name']);
         }
+
+        if (isset($config['jabber'])) {
+            $jabberConfig = $config['jabber'];
+
+            $container->getDefinition('code_lovers_logging.monlog.jabber.prowl')
+                ->addArgument($jabberConfig['host'])
+                ->addArgument($jabberConfig['port'])
+                ->addArgument($jabberConfig['user'])
+                ->addArgument($jabberConfig['password'])
+                ->addArgument($jabberConfig['recipient'])
+                ->addArgument($jabberConfig['server'])
+                ->addArgument($jabberConfig['use_encryption']);
+        }
     }
 }

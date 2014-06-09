@@ -1,5 +1,6 @@
 parameters:
     code_lovers_logging.monlog.handler.prowl.class: CodeLovers\LoggingBundle\Monolog\ProwlHandler
+    code_lovers_logging.monlog.handler.jabber.class: CodeLovers\LoggingBundle\Monolog\JabberHandler
 
 services:
     code_lovers_logging.prowl.connector:
@@ -9,3 +10,6 @@ services:
     code_lovers_logging.monlog.handler.prowl:
         class: %code_lovers_logging.monlog.handler.prowl.class%
         arguments: [@code_lovers_logging.prowl.connector]
+
+    code_lovers_logging.monlog.jabber.prowl:
+        class: %code_lovers_logging.monlog.handler.jabber.class%
