@@ -7,7 +7,7 @@
         "php": ">=5.3.3",
         "symfony/framework-bundle": ">=2.1",
         "symfony/monolog-bundle": "~2",
-        "micronax/prowl-bundle": "dev-master"
+        "xenji/ProwlPHP": ">=1.0.2"
     },
     "license": "MIT",
     "authors": [
@@ -15,5 +15,10 @@
             "name": "Daniel Holzmann",
             "email": "d@velopment.at"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {"CodeLovers\\LoggingBundle\\": ""}
+    },
+    "minimum-stability": "dev",
+    "target-dir": "CodeLovers/LoggingBundle"
 }

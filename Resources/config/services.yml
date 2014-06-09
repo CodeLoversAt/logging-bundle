@@ -1,0 +1,11 @@
+paramters:
+    code_lovers_logging.monlog.handler.prowl.class: CodeLovers\LoggingBundle\Monolog\ProwlHandler
+
+services:
+    code_lovers_logging.prowl.connector:
+        class: Prowl\Connector
+        public: false
+
+    code_lovers_logging.monlog.handler.prowl:
+        class: %code_lovers_logging.monlog.handler.prowl%
+        arguments: [@code_lovers_logging.prowl.connector]
