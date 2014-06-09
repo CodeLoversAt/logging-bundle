@@ -7,5 +7,5 @@ services:
         public: false
 
     code_lovers_logging.monlog.handler.prowl:
-        class: %code_lovers_logging.monlog.handler.prowl%
+        class: %code_lovers_logging.monlog.handler.prowl.class%
         arguments: [@code_lovers_logging.prowl.connector]
