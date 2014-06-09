@@ -40,6 +40,9 @@ class ProwlHandler extends AbstractProcessingHandler
         $this->apiKey = $apiKey;
         $this->appName = $appName;
         $this->connector = $connector;
+        $this->connector->setFilterCallback(function ($text) {
+            return $text;
+        });
     }
 
     /**
