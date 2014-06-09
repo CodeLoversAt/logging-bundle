@@ -1,4 +1,4 @@
-paramters:
+parameters:
     code_lovers_logging.monlog.handler.prowl.class: CodeLovers\LoggingBundle\Monolog\ProwlHandler
 
 services:
